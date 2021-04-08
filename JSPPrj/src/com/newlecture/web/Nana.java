@@ -17,8 +17,11 @@ public class Nana extends HttpServlet{
 			response.setContentType("text/html; charset=UTF-8");
 			
 			PrintWriter out = response.getWriter();
+			String cnt_ = request.getParameter("cnt");
 			
-			int cnt = Integer.parseInt(request.getParameter("cnt"));
+			int cnt = 100;
+			if(cnt_ != null && !cnt_.equals(""))
+				cnt = Integer.parseInt(cnt_);
 			
 			
 			for(int i=0; i<cnt; i++) {
